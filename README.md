@@ -37,7 +37,7 @@ pnpm dev
 
 ##TODO
 
-- [ ] Make it deploy (vercel)
+- [x] Make it deploy (vercel)
 - [ ] Scaffold basic ui with mock data
 - [ ] Set up the database with postgres vercel
 - [ ] Attach database to ui 
@@ -50,3 +50,8 @@ pnpm dev
 - [ ] Ratelimiting (upstash)    
 
 we will be doing `git add -p` instead of `git add -a`, by this we will be effectively be doing mini code reviews for the changes we have made
+
+now come to the mock data, we need images, because this is gallery, but hosting your files directly from public has so much issues, such as bandwidth usage, should be avoid by our best of the abilites
+so for that we are going to be using upload thing, it does charge for the bandwidth at all
+
+
