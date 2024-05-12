@@ -9,9 +9,15 @@ const mockUrls = [
     "https://utfs.io/f/94e60c6e-d882-45f0-b0ff-88ec446e196e-rxyw3y.jpg",
 ];
 
+const mockImages = mockUrls.map((url, index) => ({
+    id: index + 1, 
+    url, 
+   })); 
+
+
 export default function HomePage() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
+    <main className="">
         Hello (gallery in progress)
    </main>
   );
