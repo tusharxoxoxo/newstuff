@@ -54,4 +54,14 @@ we will be doing `git add -p` instead of `git add -a`, by this we will be effect
 now come to the mock data, we need images, because this is gallery, but hosting your files directly from public has so much issues, such as bandwidth usage, should be avoid by our best of the abilites
 so for that we are going to be using upload thing, it does charge for the bandwidth at all
 
+i just added another layout in layout2, so what is the use of this???
+-> first layer applies in the outside, the second layer applies in the next layer, and as u keep nexting, these layers keep getting applied 
 
+why would u ever want this?
+like for example in dashboard thing, u may always want to top nav to exist, everywhere u r in the dashboard, so in the dashboard folder
+we have this root layout that have this top nav, now with this we have slietly different url, 
+
+we also a have a side nav and a top nav, this layout is so convinient, and doing this in the old model was so miserable
+so now it's just build into next now
+
+we don't need those layer2, it was just for explaination, so lets remove it
