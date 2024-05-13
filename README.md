@@ -94,4 +94,25 @@ and restart our dev environment
 this will be so much faster, these few quality of life things
 
 
+vercel gives one free postgres database per account in free tier
+but their is one work around this, we can share one postgres database across multiple projects
+u can use tool like drizzle very specifically for this, this very cool feature is enabled by defualt in t3 
+
+go to src/server/db/schema.ts
+
+t3 has a prefix in all the tables, which means when u use any database technologies with drizzle in this case postgres, it will
+only effect things which start with your project name, like in this case newstuff_, with this we can have multiple different 
+projects sharing the database seperated tables with this prefix name
+
+export const createTable = pgTableCreator((name) => `newstuff_${name}`);
+
+we need to actually make sure all this is in an actual database so we have a command in t3, look for it in package.json
+db:push  : drizzle-kit push:pg
+
+migration sucks
+they fail to acknowledge alot of things that r necessary for scaling the database and also for using these things with teams 
+we have bunch of git diff to show how these things changed in the order we changed them in but migration don't encapsulate that properly
+they come from a pre version control era, as such it is recommend to use db:push, their is alot of content of this 
+we r gonna use db:push 
+
 
