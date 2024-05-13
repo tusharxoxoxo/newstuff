@@ -38,7 +38,7 @@ pnpm dev
 ##TODO
 
 - [x] Make it deploy (vercel)
-- [ ] Scaffold basic ui with mock data
+- [x] Scaffold basic ui with mock data
 - [ ] Set up the database with postgres vercel
 - [ ] Attach database to ui 
 - [ ] Add Authentication with clerk
