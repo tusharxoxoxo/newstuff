@@ -39,6 +39,7 @@ pnpm dev
 
 - [x] Make it deploy (vercel)
 - [x] Scaffold basic ui with mock data
+- [x] Tidy up build process
 - [ ] Set up the database with postgres vercel
 - [ ] Attach database to ui 
 - [ ] Add Authentication with clerk
@@ -65,3 +66,32 @@ we also a have a side nav and a top nav, this layout is so convinient, and doing
 so now it's just build into next now
 
 we don't need those layer2, it was just for explaination, so lets remove it
+
+
+tidy up the build process
+steps
+1. something little controversial
+next.config.js
+const config = {
+    typescript: {
+        ignoreBuildErrors: true,
+    }
+
+    eslint: {
+        ignoreDuringBuilds,
+        },
+};
+
+export default config;
+
+
+why do we want to ignoreBuildErrors and ignoreDuringBuilds
+we can check types, we can check eslints in the github actions in the github actions and not to block our builds, we want all of our things in one place 
+
+next things is to turn on the infamous turbo pack
+next dev --turbo in our package.json file 
+and restart our dev environment 
+this will be so much faster, these few quality of life things
+
+
+
