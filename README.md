@@ -86,7 +86,8 @@ export default config;
 
 
 why do we want to ignoreBuildErrors and ignoreDuringBuilds
-we can check types, we can check eslints in the github actions in the github actions and not to block our builds, we want all of our things in one place 
+we can check types, we can check eslints in the github actions in the github actions and not to block our builds, 
+we want all of our things in one place 
 
 next things is to turn on the infamous turbo pack
 next dev --turbo in our package.json file 
@@ -100,9 +101,9 @@ u can use tool like drizzle very specifically for this, this very cool feature i
 
 go to src/server/db/schema.ts
 
-t3 has a prefix in all the tables, which means when u use any database technologies with drizzle in this case postgres, it will
-only effect things which start with your project name, like in this case newstuff_, with this we can have multiple different 
-projects sharing the database seperated tables with this prefix name
+t3 has a prefix in all the tables, which means when u use any database technologies with drizzle in this case postgres, 
+it will only effect things which start with your project name, like in this case newstuff_, with this we can have multiple 
+different projects sharing the database seperated tables with this prefix name
 
 export const createTable = pgTableCreator((name) => `newstuff_${name}`);
 
@@ -111,8 +112,17 @@ db:push  : drizzle-kit push:pg
 
 migration sucks
 they fail to acknowledge alot of things that r necessary for scaling the database and also for using these things with teams 
-we have bunch of git diff to show how these things changed in the order we changed them in but migration don't encapsulate that properly
-they come from a pre version control era, as such it is recommend to use db:push, their is alot of content of this 
+we have bunch of git diff to show how these things changed in the order we changed them in but migration don't encapsulate 
+that properly they come from a pre version control era, as such it is recommend to use db:push, their is alot of content of 
+this 
+
 we r gonna use db:push 
 
+we r gonna update the datbase to match our current schema
+`pnpm run db:push`
 
+if we see how this looks in database
+
+to see the stuff in our database we can 
+`pnpm run db:studio`
+db:studio will take advantabe of drizzle studio, which is super usefull 
